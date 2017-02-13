@@ -1,30 +1,34 @@
+body,
+html{
+	margin:0;
+	padding:0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Cuprum');
 body
 {   
-	font-family:'Cuprum', Tahoma, sans-serif;
+	font-family: 'Cuprum', Arial, sans-serif;
 	font-size:14px;
 	line-height:24px;
 	letter-spacing:0px;
 }	
 /*header*/
 /*header-top*/
-.fon{
-	background-color:#f1f5f7;
-	height:320px;
+.section-inner  {
+	display:flex;
+	flex-wrap:wrap;
+	width:940px;
+	margin:0 auto;
+	padding:0 10px;
 }
 .container{
 	width:940px;
 	margin:0 auto;
 	padding:0 10px;
 }
-.user-block{
+.header-top-section{
 	background-color:#293449;
 	height:43px;
-}
-.user-block-container{
-	display:flex;
-	width:940px;
-	margin:0 auto;
-	padding:0 10px;
 }
 .logotip{
 	width:480px;
@@ -32,6 +36,18 @@ body
 .logo{
 	float:left;
 }
+.icon-basket{ 
+position:relative;
+}
+.icon-basket::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 20px;
+  width: 18px;
+  height: 18px;
+ background: url("img/page-icons__ico-004.png");
+}	
 .user{
 	display:flex;
 	width:460px;
@@ -52,16 +68,22 @@ body
 #button:hover{
 	background-color:#5fbb2d;
 }
+.page-header{
+	background-color:#f1f5f7;
+}
+.menu{
+	margin-bottom:30px;
+}
 /*.user a:active{
 	при нажатии
 }*/
 
 /*header-center*/
-.authorization{
+.section-inner.header-middle-section-inner{
 	display:flex;
 	height:160px;
 }
-.authorization-content{
+.section-inner.header-middle-section-inner p{
 	padding-left:45px;
 	padding-top:40px;
 	width:300px;
@@ -81,6 +103,7 @@ body
 /*header-menu*/
 .menu{
 	display:flex;
+	width:960px;
 	background-color:#293449;
 	/*dobavit ten*/
 }
@@ -300,10 +323,10 @@ height:480px;
 }
 
 /*footer*/
-.footer-top{
+.footer-top-section{
 	background-color:#34445e;
 }
-.container.top{
+.section-inner  {
 	display:flex;
 	flex-wrap:wrap;
 	width:940px;
@@ -323,11 +346,12 @@ height:480px;
 	flex-wrap:wrap;
 	width:560px;
 }
-.footer-bottom {
-	display:flex;
-	height:105px;
+
+.section.footer-bottom-section{
 	background-color:#293449;
+	min-height:105px;
 }
+
 /*texnomart-catalog*/
 
 .breadcrumbs{
