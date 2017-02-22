@@ -8,37 +8,37 @@ var servicesButs = document.querySelectorAll('.services-nav-item'),
 	servicesGuarantee = document.querySelector('.is-guarantee'),
 	servicesCredit = document.querySelector('.is-credit');
 
+if (servicesGuaranteeBut) {
+	servicesCreditBut.addEventListener('click', function () {
+		servicesDeliveryBut.classList.remove('active');
+		servicesGuaranteeBut.classList.remove('active');
+		servicesCreditBut.classList.add('active');
 
-servicesCreditBut.addEventListener('click', function () {
-	servicesDeliveryBut.classList.remove('active');
-	servicesGuaranteeBut.classList.remove('active');
-	servicesCreditBut.classList.add('active');
+		servicesDelivery.classList.remove('active');
+		servicesGuarantee.classList.remove('active');
+		servicesCredit.classList.add('active');
+	});
 
-	servicesDelivery.classList.remove('active');
-	servicesGuarantee.classList.remove('active');
-	servicesCredit.classList.add('active');
-});
+	servicesDeliveryBut.addEventListener('click', function () {
+		servicesDeliveryBut.classList.add('active');
+		servicesGuaranteeBut.classList.remove('active');
+		servicesCreditBut.classList.remove('active');
 
-servicesDeliveryBut.addEventListener('click', function () {
-	servicesDeliveryBut.classList.add('active');
-	servicesGuaranteeBut.classList.remove('active');
-	servicesCreditBut.classList.remove('active');
+		servicesDelivery.classList.add('active');
+		servicesGuarantee.classList.remove('active');
+		servicesCredit.classList.remove('active');
+	});
 
-	servicesDelivery.classList.add('active');
-	servicesGuarantee.classList.remove('active');
-	servicesCredit.classList.remove('active');
-});
+	servicesGuaranteeBut.addEventListener('click', function () {
+		servicesDeliveryBut.classList.remove('active');
+		servicesGuaranteeBut.classList.add('active');
+		servicesCreditBut.classList.remove('active');
 
-servicesGuaranteeBut.addEventListener('click', function () {
-	servicesDeliveryBut.classList.remove('active');
-	servicesGuaranteeBut.classList.add('active');
-	servicesCreditBut.classList.remove('active');
-
-	servicesDelivery.classList.remove('active');
-	servicesGuarantee.classList.add('active');
-	servicesCredit.classList.remove('active');
-});
-
+		servicesDelivery.classList.remove('active');
+		servicesGuarantee.classList.add('active');
+		servicesCredit.classList.remove('active');
+	});
+}
 
 
 var modalOverlay = document.querySelector('.modal-overlay');
@@ -74,21 +74,21 @@ if (modalAddCart) {
 
 
 // форма обратной связи
-var modalWriteUs = document.querySelector(".modal-write-us");
+var modalWriteUs = document.querySelector('.modal-write-us');
 if (modalWriteUs) {
-	var buttonWriteUs = document.querySelector(".button-write-us");
-		buttonCloseWS = modalWriteUs.querySelector(".modal-close");
-		yourNameField = modalWriteUs.querySelector("#your-name-id");
-		emailField = modalWriteUs.querySelector("#email-id");
-		messageField = modalWriteUs.querySelector("#message-id");
-		formWriteUs = modalWriteUs.querySelector("form");
-		storageUsername = localStorage.getItem("username");
-		storageEmail = localStorage.getItem("email");
+	var buttonWriteUs = document.querySelector('.button-write-us');
+		buttonCloseWS = modalWriteUs.querySelector('.modal-close');
+		yourNameField = modalWriteUs.querySelector('#your-name-id');
+		emailField = modalWriteUs.querySelector('#email-id');
+		messageField = modalWriteUs.querySelector('#message-id');
+		formWriteUs = modalWriteUs.querySelector('form');
+		storageUsername = localStorage.getItem('username');
+		storageEmail = localStorage.getItem('email');
 
-	buttonWriteUs.addEventListener("click", function(event) {
+	buttonWriteUs.addEventListener('click', function(event) {
 		event.preventDefault();
-		modalOverlay.classList.add("modal-show");
-		modalWriteUs.classList.add("modal-show");
+		modalOverlay.classList.add('modal-show');
+		modalWriteUs.classList.add('modal-show');
 
 		if (storageUsername && storageEmail) {
 			yourNameField.value = storageUsername;
@@ -99,22 +99,22 @@ if (modalWriteUs) {
 		}
 	});
 
-	buttonCloseWS.addEventListener("click", function(event) {
+	buttonCloseWS.addEventListener('click', function(event) {
 		event.preventDefault();
-		modalOverlay.classList.remove("modal-show");
-		modalWriteUs.classList.remove("modal-show");
-		modalWriteUs.classList.remove("modal-error");
+		modalOverlay.classList.remove('modal-show');
+		modalWriteUs.classList.remove('modal-show');
+		modalWriteUs.classList.remove('modal-error');
 	});
 
-	formWriteUs.addEventListener("submit", function(event) {
+	formWriteUs.addEventListener('submit', function(event) {
 		if (!yourNameField.value || !emailField.value) {
 			event.preventDefault();
-			modalWriteUs.classList.remove("modal-error");
+			modalWriteUs.classList.remove('modal-error');
 			modalWriteUs.offsetWidth = modalWriteUs.offsetWidth;
-			modalWriteUs.classList.add("modal-error");
+			modalWriteUs.classList.add('modal-error');
 		} else {
-			localStorage.setItem("username", yourNameField.value);
-			localStorage.setItem("email", emailField.value);
+			localStorage.setItem('username', yourNameField.value);
+			localStorage.setItem('email', emailField.value);
 		}
 	});
 }
@@ -124,20 +124,20 @@ if (modalWriteUs) {
 
 
 // карта
-var modalMap = document.querySelector(".modal-map");
+var modalMap = document.querySelector('.modal-map');
 if (modalMap) {
-	var buttonMap = document.querySelector(".map-link"),
-		buttonCloseMap = modalMap.querySelector(".modal-close");
+	var buttonMap = document.querySelector('.map-link'),
+		buttonCloseMap = modalMap.querySelector('.modal-close');
 
-	buttonMap.addEventListener("click", function(event) {
+	buttonMap.addEventListener('click', function(event) {
 		event.preventDefault();
-		modalOverlay.classList.add("modal-show");
-		modalMap.classList.add("modal-show");
+		modalOverlay.classList.add('modal-show');
+		modalMap.classList.add('modal-show');
 	});
 
-	buttonCloseMap.addEventListener("click", function(event) {
+	buttonCloseMap.addEventListener('click', function(event) {
 		event.preventDefault();
-		modalOverlay.classList.remove("modal-show");
-		modalMap.classList.remove("modal-show");
+		modalOverlay.classList.remove('modal-show');
+		modalMap.classList.remove('modal-show');
 	});
 }
